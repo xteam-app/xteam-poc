@@ -1,0 +1,20 @@
+{
+  "name": "xteam",
+  "version": "1.0.0",
+  "description": "xteam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xteam-app/xteam.git"
+  },
+  "keywords": [],
+  "author": "Alex Iliushyk <ailushyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xteam-app/xteam/issues"
+  },
+  "homepage": "https://github.com/xteam-app/xteam#readme"
+}
