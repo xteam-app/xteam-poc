@@ -1,10 +1,12 @@
 {
   "name": "xteam",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "private": true,
   "description": "xteam",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf package-lock.json"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,16 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1"
+  },
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**"
+    ]
   }
 }
