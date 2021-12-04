@@ -1,5 +1,5 @@
 {
-  "name": "mobile",
+  "name": "@xteam-app/mobile",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,6 +9,17 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xteam-app/xteam.git"
+  },
+  "keywords": [],
+  "author": "Alex Iliushyk <ailushyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xteam-app/xteam/issues"
+  },
+  "homepage": "https://github.com/xteam-app/xteam#readme",
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.66.3"

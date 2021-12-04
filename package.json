@@ -5,6 +5,8 @@
   "description": "xteam",
   "main": "index.js",
   "scripts": {
+    "start": "echo \"Error: no start specified\" && exit 1",
+    "start:mobile": "yarn workspace @xteam-app/mobile ios",
     "test": "echo \"Error: no test specified\" && exit 1",
     "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf package-lock.json"
   },
