@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar, StyleSheet, useColorScheme } from 'react-native';
 
 import {
   Colors,
@@ -18,7 +18,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { Text } from '@xteam-app/ui';
+import { Text, View } from '@xteam-app/ui';
 
 const Section: React.FC<{
   title: string;
