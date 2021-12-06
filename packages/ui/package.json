@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -c .storybook/web",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prestart": "sb-rn-get-stories -c .storybook/mobile",
+    "storybook-watcher": "sb-rn-watcher -c .storybook/mobile"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "^6.4.7",
+    "@react-native-async-storage/async-storage": "^1.15.14",
+    "@react-native-community/datetimepicker": "^4.0.1",
+    "@react-native-community/slider": "^4.1.12",
+    "@storybook/addon-actions": "^6.4.8",
+    "@storybook/addon-controls": "^6.4.8",
     "@storybook/addon-essentials": "^6.4.7",
     "@storybook/addon-links": "^6.4.7",
+    "@storybook/addon-ondevice-actions": "^6.0.1-alpha.7",
+    "@storybook/addon-ondevice-backgrounds": "^6.0.1-alpha.7",
+    "@storybook/addon-ondevice-controls": "^6.0.1-alpha.7",
+    "@storybook/addon-ondevice-notes": "^6.0.1-alpha.7",
     "@storybook/react": "^6.4.7",
+    "@storybook/react-native": "^6.0.1-alpha.7",
     "@types/react": "^17.0.37",
     "@types/react-native": "^0.66.8",
     "babel-loader": "^8.2.3",
