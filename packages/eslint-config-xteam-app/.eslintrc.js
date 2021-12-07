@@ -25,7 +25,7 @@ module.exports = {
       'error',
       // configure Prettier for ESLint
       {
-        arrowParens: 'avoid',
+        // arrowParens: 'avoid',
         printWidth: 120,
         singleQuote: true,
       },
