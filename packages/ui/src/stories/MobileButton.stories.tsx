@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import { ComponentMeta, ComponentStory } from '@storybook/react-native';
 import { Button as MyButton } from './Button';
 
 const MyButtonMeta: ComponentMeta<typeof MyButton> = {
@@ -17,4 +17,4 @@ export default MyButtonMeta;
 
 type MyButtonStory = ComponentStory<typeof MyButton>;
 
-export const Basic: MyButtonStory = args => <MyButton {...args} />;
+export const Basic: MyButtonStory = (args) => <MyButton {...args} />;
