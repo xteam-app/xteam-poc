@@ -1,6 +1,15 @@
 import React, { FC } from 'react';
 import { Pressable, PressableProps } from 'react-native';
+import { useStyle } from '../../utils/useStyle';
+import { BaseProps } from '../../types';
 
-export const Button: FC<PressableProps> = ({ children, ...props }) => {
-  return <Pressable {...props}>{children}</Pressable>;
+interface ButtonProps extends BaseProps, Pick<PressableProps, 'onPress'> {}
+
+export const Button: FC<ButtonProps> = ({ tw, children, ...props }) => {
+  const style = useStyle(tw);
+  return (
+    <Pressable style={style} {...props}>
+      {children}
+    </Pressable>
+  );
 };

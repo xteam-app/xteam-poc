@@ -1,8 +1,11 @@
-import React from 'react';
-import { View as DefaultView, ViewProps } from 'react-native';
+import React, { FC } from 'react';
+import { View as DefaultView } from 'react-native';
+import { useStyle } from '../../utils/useStyle';
+import { BaseProps } from '../../types';
 
-export const View = (props: ViewProps) => {
-  const { style, ...otherProps } = props;
+type IView = BaseProps;
 
-  return <DefaultView style={[style]} {...otherProps} />;
+export const View: FC<IView> = ({ tw, ...otherProps }) => {
+  const style = useStyle(tw);
+  return <DefaultView style={style} {...otherProps} />;
 };

@@ -4,7 +4,7 @@ import { Button } from './Button';
 import { Alert, StyleSheet } from 'react-native';
 import { Text, View } from '..';
 
-const Simple: Story = args => {
+const Simple: Story = (args) => {
   return (
     <Button {...args}>
       <Text>I&apos;m pressable!</Text>
@@ -17,7 +17,7 @@ Simple.args = {
   },
 };
 
-const Tmp: Story = args => {
+const Tmp: Story = (args) => {
   const [timesPressed, setTimesPressed] = useState(0);
 
   let textLog = '';
@@ -28,10 +28,10 @@ const Tmp: Story = args => {
   }
 
   return (
-    <View style={styles.container}>
+    <View>
       <Button
         onPress={() => {
-          setTimesPressed(current => current + 1);
+          setTimesPressed((current) => current + 1);
         }}
         style={({ pressed }) => [
           {
@@ -44,7 +44,7 @@ const Tmp: Story = args => {
       >
         {({ pressed }) => <Text style={styles.text}>{pressed ? 'Pressed!' : 'Press Me'}</Text>}
       </Button>
-      <View style={styles.logBox}>
+      <View>
         <Text testID="pressable_press_console">{textLog}</Text>
       </View>
     </View>
