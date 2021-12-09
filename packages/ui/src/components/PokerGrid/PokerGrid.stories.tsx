@@ -6,7 +6,7 @@ const Simple: Story<IPokerGrid> = (args) => {
 };
 
 export default {
-  title: 'Layouts/PokerGrid',
+  title: 'Components/PokerGrid',
   component: PokerGrid,
 } as Meta;
 

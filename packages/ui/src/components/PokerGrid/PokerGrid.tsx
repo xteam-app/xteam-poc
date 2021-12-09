@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Button, Text, View } from '../../elements';
-import tw from 'twrnc';
 
 enum TShirts {
   'xs' = 'xs',
@@ -23,13 +22,32 @@ const defaultDeck: CardValue[] = [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 90, 100];
 
 const PokerGrid: FC<IPokerGrid> = ({ deck = defaultDeck, onClick }) => {
   return (
-    <View tw={'flex flex-row flex-wrap justify-evenly px-3'}>
+    <View
+      tw={`
+        flex-row flex-wrap justify-between items-center
+        -mx-2 
+        border-red-300
+      `}
+    >
       {deck.map((card) => (
-        <View key={card} tw="w-1/3 px-3 py-3">
-          <Button tw={`border bg-gray-900`} onPress={() => onClick(card)}>
-            <Text tw={'px-4 py-5 text-md text-center font-bold bg-pink-200 dark:bg-gray-900'}>{card}</Text>
-          </Button>
-        </View>
+        <Button
+          key={card}
+          tw={`
+            w-25 h-25 mb-6 mx-2 justify-center 
+            border-2 border-gray-500
+            bg-pink-200 dark:bg-gray-900
+          `}
+          onPress={() => onClick(card)}
+        >
+          <Text
+            tw={`
+              text-xl text-center font-medium 
+              bg-transparent
+            `}
+          >
+            {card}
+          </Text>
+        </Button>
       ))}
     </View>
   );

@@ -1,1 +1,1 @@
-export * from './PokerGrid/PokerGrid';
+export * from '../components/PokerGrid/PokerGrid';
