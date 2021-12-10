@@ -1,16 +1,7 @@
 import React, { FC } from 'react';
 import { Button, Text, View } from '../../elements';
 
-enum TShirts {
-  'xs' = 'xs',
-  's' = 's',
-  'm' = 'm',
-  'l' = 'l',
-  'xl' = 'xl',
-  'xxl' = 'xxl',
-}
-
-type CardValue = number | TShirts;
+type CardValue = number | string;
 
 interface IPokerGrid {
   deck?: CardValue[];
@@ -33,7 +24,7 @@ const PokerGrid: FC<IPokerGrid> = ({ deck = defaultDeck, onClick }) => {
         <Button
           key={card}
           tw={`
-            w-25 h-25 mb-6 mx-2 justify-center 
+            w-25 h-25 mt-1 mb-6 mx-2 justify-center 
             border-2 border-gray-500
             bg-pink-200 dark:bg-gray-900
           `}
@@ -42,7 +33,7 @@ const PokerGrid: FC<IPokerGrid> = ({ deck = defaultDeck, onClick }) => {
           <Text
             tw={`
               text-xl text-center font-medium 
-              bg-transparent
+              bg-transparent uppercase
             `}
           >
             {card}
@@ -53,5 +44,5 @@ const PokerGrid: FC<IPokerGrid> = ({ deck = defaultDeck, onClick }) => {
   );
 };
 
-export type { CardValue, TShirts, IPokerGrid };
+export type { CardValue, IPokerGrid };
 export { PokerGrid };
