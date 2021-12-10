@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -c ./.storybook/web",
-    "build-storybook": "build-storybook -c ./.storybook/web"
+    "storybook:docs": "start-storybook -c ./.storybook/web --docs --no-manager-cache",
+    "build-storybook": "build-storybook -c ./.storybook/web",
+    "build-storybook:docs": "build-storybook -c ./.storybook/web --docs"
   },
   "repository": {
     "type": "git",

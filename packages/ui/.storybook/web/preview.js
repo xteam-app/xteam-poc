@@ -25,7 +25,7 @@ export const parameters = {
         ['View', 'Text', 'Button'],
         'Components',
         'Layouts',
-        'Pages',
+        'Screens',
         'Experiments',
         '*',
         'Example'
