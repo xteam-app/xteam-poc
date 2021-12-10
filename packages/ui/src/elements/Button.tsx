@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Pressable, PressableProps } from 'react-native';
-import { useStyle } from '../../utils/useStyle';
-import { BaseProps } from '../../types';
+import { useStyle } from '../utils/useStyle';
+import { BaseProps } from '../types';
 
 interface ButtonProps extends BaseProps, Pick<PressableProps, 'onPress'> {}
 

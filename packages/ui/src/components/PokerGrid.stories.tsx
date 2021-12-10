@@ -1,9 +1,11 @@
 import { Meta, Story } from '@storybook/react';
 import { IPokerGrid, PokerGrid } from './PokerGrid';
+import { baseLayoutDecorator } from '../utils/decorators';
 
 export default {
-  title: 'Components/PokerGrid',
   component: PokerGrid,
+  title: '',
+  decorators: [baseLayoutDecorator],
 } as Meta;
 
 const Template: Story<IPokerGrid> = (args) => {

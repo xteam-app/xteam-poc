@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Button } from './Button';
 import { Alert, StyleSheet } from 'react-native';
-import { Text, View } from '..';
+import { Text, View } from './index';
 
 const Simple: Story = (args) => {
   return (
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
 });
 
 export default {
-  title: 'Elements/Button',
   component: Button,
 } as Meta;
 

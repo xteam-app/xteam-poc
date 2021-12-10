@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { View } from '../../elements';
+import { View } from '../elements';
 import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
-import { useStyle } from '../../utils/useStyle';
+import { useStyle } from '../utils/useStyle';
 
 export const BaseLayout: FC = ({ children }) => {
   const isDarkMode = useColorScheme() === 'dark';

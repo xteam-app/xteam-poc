@@ -2,6 +2,10 @@ import { Meta, Story } from '@storybook/react';
 import { GridView } from './GridView';
 import { Text } from '../elements';
 
+export default {
+  component: GridView,
+} as Meta;
+
 const Simple: Story = () => {
   return (
     <GridView>
@@ -9,10 +13,5 @@ const Simple: Story = () => {
     </GridView>
   );
 };
-
-export default {
-  title: 'Layouts/GridView',
-  component: GridView,
-} as Meta;
 
 export { Simple };

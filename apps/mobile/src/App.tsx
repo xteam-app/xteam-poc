@@ -1,8 +1,7 @@
 import React from 'react';
 import { Alert, ScrollView } from 'react-native';
 
-import { Caption, PokerGrid, View } from '@xteam-app/ui';
-import { BaseLayout } from '@xteam-app/ui/src/layouts/Layout/BaseLayout';
+import { BaseLayout, Caption, PokerGrid } from '@xteam-app/ui';
 
 const App = () => {
   return (

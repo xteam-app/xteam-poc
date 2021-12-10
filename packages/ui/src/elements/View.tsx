@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { View as DefaultView } from 'react-native';
-import { useStyle } from '../../utils/useStyle';
-import { BaseProps } from '../../types';
+import { useStyle } from '../utils/useStyle';
+import { BaseProps } from '../types';
 
 type IView = BaseProps;
 
