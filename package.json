@@ -8,6 +8,7 @@
     "start": "echo \"Error: no start specified\" && exit 1",
     "start:mobile": "yarn workspace @xteam-app/mobile ios",
     "start:ui": "yarn workspace @xteam-app/ui storybook",
+    "start:ui:doc": "yarn workspace @xteam-app/ui storybook:docs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock"
   },
@@ -32,7 +33,8 @@
       "**/react",
       "**/react-dom",
       "**/react-native",
-      "**/react-native/**"
+      "**/react-native/**",
+      "**/create-react-class"
     ]
   }
 }

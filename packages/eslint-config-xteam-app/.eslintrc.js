@@ -5,7 +5,12 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -25,7 +30,7 @@ module.exports = {
       'error',
       // configure Prettier for ESLint
       {
-        arrowParens: 'avoid',
+        // arrowParens: 'avoid',
         printWidth: 120,
         singleQuote: true,
       },

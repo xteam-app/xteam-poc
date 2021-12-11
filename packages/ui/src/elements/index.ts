@@ -1,2 +1,3 @@
-export * from './Text/Text';
-export * from './View/View';
+export * from './Button';
+export * from './Text';
+export * from './View';
