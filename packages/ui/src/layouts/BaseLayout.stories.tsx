@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { BaseLayout } from './BaseLayout';
-import { Caption } from '../components';
-import { Text } from '../elements';
+import { Caption, Text } from '../elements';
 
 export default {
   component: BaseLayout,
