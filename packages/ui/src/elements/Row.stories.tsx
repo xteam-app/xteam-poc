@@ -28,4 +28,9 @@ Evenly.args = {
   tw: 'justify-evenly',
 };
 
-export { Default, Around, Evenly };
+const Center = Template.bind({});
+Center.args = {
+  tw: 'justify-center',
+};
+
+export { Default, Around, Evenly, Center };

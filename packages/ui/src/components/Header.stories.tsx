@@ -9,17 +9,16 @@ export default {
   decorators: [baseLayoutDecorator],
 } as Meta;
 
-const HeaderWithLink: Story = (args) => {
+const Simple: Story = (args) => {
   return (
-    <Row>
+    <Row tw={'items-baseline'}>
       <Caption {...args}>
         <Text>Caption</Text>
         <Text tw="text-xs">SubCaption</Text>
       </Caption>
-      <Link to="https://example.com">#123</Link>
+      <Text>#123</Text>
     </Row>
   );
 };
-HeaderWithLink.storyName = 'Header with link';
 
-export { HeaderWithLink };
+export { Simple };
