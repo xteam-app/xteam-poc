@@ -2,6 +2,8 @@ import { Meta, Story } from '@storybook/react';
 import { Caption } from './Caption';
 import { baseLayoutDecorator } from '../utils/decorators';
 import { Text } from './Text';
+import React from 'react';
+import { Row } from './Row';
 
 export default {
   component: Caption,
@@ -21,4 +23,13 @@ const MultiLines: Story<{ header: string; link: string }> = (args) => {
   );
 };
 
-export { Simple, MultiLines };
+const Header: Story = (args) => {
+  return (
+    <Row>
+      <Caption>My Caption</Caption>
+      <Text>#123</Text>
+    </Row>
+  );
+};
+
+export { Simple, MultiLines, Header };
