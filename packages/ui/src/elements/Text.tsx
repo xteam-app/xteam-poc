@@ -4,6 +4,7 @@ import { useStyle } from '../utils/useStyle';
 import { BaseProps, ThemeSize } from '../types';
 
 interface TextProps extends BaseProps {
+  /** @deprecated */
   size?: ThemeSize;
 }
 

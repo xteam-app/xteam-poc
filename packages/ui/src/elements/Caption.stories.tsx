@@ -16,7 +16,7 @@ const MultiLines: Story<{ header: string; link: string }> = (args) => {
   return (
     <Caption {...args}>
       <Text>Poker Team</Text>
-      <Text size={'xs'}>#123</Text>
+      <Text tw={`text-xs text-blue-200`}>#123</Text>
     </Caption>
   );
 };
