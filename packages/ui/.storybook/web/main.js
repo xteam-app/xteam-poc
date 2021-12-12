@@ -18,6 +18,6 @@ module.exports = {
   ],
   'framework': '@storybook/react',
   features: {
-    storyStoreV7: true
+    storyStoreV7: false
   }
 };
