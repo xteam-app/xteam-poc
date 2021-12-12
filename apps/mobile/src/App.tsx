@@ -1,19 +1,16 @@
 import React from 'react';
-import { Alert, ScrollView } from 'react-native';
 
-import { BaseLayout, Caption, PokerGrid } from '@xteam-app/ui';
+import { BaseLayout, Caption, PokerGrid, Row, Text } from '@xteam-app/ui';
+import { Alert } from 'react-native';
 
 const App = () => {
   return (
     <BaseLayout>
-      <Caption>Have fun with us</Caption>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <PokerGrid
-          onClick={(card) => {
-            Alert.alert(card.toString());
-          }}
-        />
-      </ScrollView>
+      <Row tw={'items-baseline'}>
+        <Caption>My Team</Caption>
+        <Text>#123</Text>
+      </Row>
+      <PokerGrid onClick={(item) => Alert.alert(item.toString())} />
     </BaseLayout>
   );
 };
