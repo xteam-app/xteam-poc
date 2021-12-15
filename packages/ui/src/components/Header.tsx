@@ -1,5 +1,5 @@
 import React, { createContext, FC, useContext } from 'react';
-import { Row, Text } from '../elements';
+import { Col, ILink, Link, Text, View } from '../elements';
 
 const HeaderContext = createContext('header');
 
@@ -12,32 +12,31 @@ const useHeaderContext = () => {
 };
 
 const HeaderTitle: FC = ({ children }) => {
+  useHeaderContext();
   return <Text tw={`text-2xl font-bold`}>{children}</Text>;
 };
 
 const HeaderSubtitle: FC = ({ children }) => {
+  useHeaderContext();
   return <Text tw={`text-base font-medium`}>{children}</Text>;
 };
 
+const HeaderAction: FC = ({ children }) => {
+  useHeaderContext();
+  return <>{children}</>;
+};
+
 const Header: FC = ({ children }) => {
-  const styles = 'font-bold';
-  // if (React.Children.count(children) > 1) {
-  //   styles = styles.concat(' flex flex-col');
-  // }
-  // const lines = React.Children.map(children, (line) => {
-  //   if (typeof line === 'string') {
-  //     console.log(`line: ${line}`);
-  //     return <Text>{line}</Text>;
-  //   }
-  //   return line;
-  // });
-  return (
-    <HeaderContext.Provider value={'header'}>
-      <Row tw="items-baseline">
-        <Text tw={styles}>{children}</Text>
-      </Row>
-    </HeaderContext.Provider>
-  );
+  const styles = 'text-2xl font-bold';
+  const lines = React.Children.map(children, (line) => {
+    // @ts-ignore
+    console.log(line?.type?.displayName);
+    if (typeof line === 'string') {
+      return <Text tw={styles}>{line}</Text>;
+    }
+    return line;
+  });
+  return <HeaderContext.Provider value={'header'}>{lines}</HeaderContext.Provider>;
 };
 
 export { Header, HeaderTitle, HeaderSubtitle };

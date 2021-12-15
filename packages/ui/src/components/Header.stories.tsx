@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Caption, Row, Text, View } from '../elements';
+import { Caption, Col, Row, Text, View } from '../elements';
 import React from 'react';
 import { baseLayoutDecorator } from '../utils/decorators';
 import { Header, HeaderSubtitle, HeaderTitle } from './Header';
@@ -14,11 +14,14 @@ const Simple: Story = (args) => {
   return <Header {...args}>Simple Lorem ipsum</Header>;
 };
 
+/**
+ * TODO: allow only HeadComponents?
+ */
 const SimpleMultilineHeader: Story = (args) => {
   return (
     <Header {...args}>
-      <Text>Lorem ipsum dolor sit amet</Text>
-      <Text>consectetur adipisicing elit</Text>
+      <Text>1. Lorem ipsum title</Text>
+      <Text>2. consectetur subtitle</Text>
     </Header>
   );
 };
@@ -35,11 +38,11 @@ const MultilineHeader: Story = (args) => {
 const MultilineHeaderWithLink: Story = (args) => {
   return (
     <Header {...args}>
-      <Row tw={'justify-between items-baseline'}>
-        <View tw={'mr-6'}>
+      <Row tw={''}>
+        <Col tw={'items-start'}>
           <HeaderTitle>Lorem ipsum</HeaderTitle>
           <HeaderSubtitle>consectetur adipisicing elit</HeaderSubtitle>
-        </View>
+        </Col>
         <ShareLink to={'https://xteam.app/t/123'}>#123</ShareLink>
       </Row>
 
