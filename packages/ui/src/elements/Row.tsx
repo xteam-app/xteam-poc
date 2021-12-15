@@ -5,7 +5,7 @@ import { BaseProps } from '../types';
 export const Row: FC<BaseProps> = ({ tw, children }) => {
   const baseStyles = `
     flex-row justify-between
-    mb-4
+    w-full mb-4
   `;
   const styles = [baseStyles];
   if (tw) {

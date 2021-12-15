@@ -5,7 +5,7 @@ import { BaseProps } from '../types';
 export const Col: FC<BaseProps> = ({ tw, children }) => {
   const baseStyles = `
     flex-col justify-center items-center
-    mb-4
+    h-full
   `;
   const styles = [baseStyles];
   if (tw) {
