@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Text, View } from '../elements';
+import { Button, Text, View } from '@elements';
 
 type CardValue = number | string;
 

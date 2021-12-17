@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { View } from './View';
 import { BaseProps } from '../types';
 
-export const Row: FC<BaseProps> = ({ tw, children }) => {
+export const FlexCol: FC<BaseProps> = ({ tw, children }) => {
   const baseStyles = `
-    flex-row justify-between
-    w-full mb-4
+    flex-col justify-center items-center
+    h-full
   `;
   const styles = [baseStyles];
   if (tw) {

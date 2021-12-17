@@ -1,30 +1,30 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BaseLayout } from '../../layouts';
-import { Caption, Divider, Row, Text } from '../../elements';
+import { Caption, Divider, FlexRow, Text } from '../../elements';
 
 export default {} as Meta;
 
 const PokerTable: Story = (args) => {
   return (
     <BaseLayout>
-      <Row tw={'items-baseline'}>
+      <FlexRow tw={'items-baseline'}>
         <Caption>My Team</Caption>
         <Text>#123</Text>
-      </Row>
-      <Row>
+      </FlexRow>
+      <FlexRow>
         <Text>John</Text>
         <Text>5</Text>
-      </Row>
-      <Row>
+      </FlexRow>
+      <FlexRow>
         <Text>Ann</Text>
         <Text>3</Text>
-      </Row>
+      </FlexRow>
       <Divider />
-      <Row>
+      <FlexRow>
         <Text>Total</Text>
         <Text>5</Text>
-      </Row>
+      </FlexRow>
     </BaseLayout>
   );
 };
