@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import { Text } from './Text';
-import { View } from './View';
+import { Text, View } from '@elements';
 
 const Caption: FC = ({ children }) => {
   return (
