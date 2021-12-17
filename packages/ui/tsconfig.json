@@ -1,3 +1,13 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["./src/components"],
+      "@elements": ["./src/elements"],
+      "@layouts": ["./src/layouts"],
+      "@screens": ["./src/screens"],
+      "@utils": ["./src/utils"],
+    }
+  }
 }
