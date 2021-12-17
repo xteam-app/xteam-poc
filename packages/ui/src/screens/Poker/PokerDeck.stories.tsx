@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Caption, Row, Text } from '../../elements';
+import { Caption, FlexRow, Text } from '../../elements';
 import { PokerGrid } from '../../components';
 import * as PokerGridStories from '../../components/PokerGrid.stories';
 import { BaseLayout } from '../../layouts';
@@ -10,10 +10,10 @@ export default {} as Meta;
 const PokerDeck: Story = (args) => {
   return (
     <BaseLayout>
-      <Row tw={'items-baseline'}>
+      <FlexRow tw={'items-baseline'}>
         <Caption>My Team</Caption>
         <Text>#123</Text>
-      </Row>
+      </FlexRow>
       <PokerGrid
         {...PokerGridStories.Default.args}
         onClick={(item) => {

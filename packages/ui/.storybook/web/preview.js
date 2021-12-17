@@ -4,7 +4,16 @@ export const parameters = {
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
-    default: 'light',
+    default: 'dark',
+    values: [
+      { name: "light", value: "#eeeeee" },
+      { name: "dark", value: "#1f2937" },
+      // { name: "light", value: "#eeeeee" },
+      // { name: "dark", value: "#333333" },
+      // { name: "white", value: "#ffffff" },
+      // { name: "gray", value: "#cccccc" },
+      // { name: "black", value: "#000000" }
+    ],
   },
   controls: {
     matchers: {
@@ -22,7 +31,7 @@ export const parameters = {
       order: [
         'Intro',
         'Elements',
-        ['View', 'Text', 'Button'],
+        // ['View', 'Text', 'Button'],
         'Components',
         'Layouts',
         'Screens',

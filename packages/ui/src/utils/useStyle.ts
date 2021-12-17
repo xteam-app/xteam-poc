@@ -1,7 +1,7 @@
 import { ClassInput } from 'twrnc/dist/esm/types';
 import { useDeviceContext } from 'twrnc';
 import { useTheme } from './useTheme';
-import tailwind from './tailwind';
+import { tw as tailwind } from '@utils/tailwind';
 
 export const useStyle = (tw?: ClassInput) => {
   useDeviceContext(tailwind);

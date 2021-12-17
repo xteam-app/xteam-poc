@@ -6,12 +6,10 @@ export default {
 } as Meta;
 
 const Simple: Story<ILink> = (args) => {
-  return <Link {...args} />;
+  return <Link {...args}>Example Link</Link>;
 };
-
 Simple.args = {
   to: 'https://example.com',
-  children: 'Example Link',
 };
 
 export { Simple };

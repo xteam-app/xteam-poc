@@ -1,17 +1,12 @@
 import React, { FC } from 'react';
-import { Text } from './Text';
-import { View } from './View';
+import { Text, View } from '@elements';
 
-export const Caption: FC = ({ children }) => {
-  let styles = 'font-bold';
-  if (React.Children.count(children) > 1) {
-    styles = styles.concat(' flex flex-col');
-  }
+const Caption: FC = ({ children }) => {
   return (
-    <View tw={'mb-4'}>
-      <Text size={'2xl'} tw={styles}>
-        {children}
-      </Text>
+    <View tw={'mt-6 mb-4'}>
+      <Text tw={`text-xl font-bold uppercase`}>{children}</Text>
     </View>
   );
 };
+
+export { Caption };

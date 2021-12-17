@@ -1,12 +1,13 @@
 import { Meta, Story } from '@storybook/react';
 import { BaseLayout } from './BaseLayout';
-import { Caption, Text } from '../elements';
+import { Caption, Text } from '@elements';
+import React from 'react';
 
 export default {
   component: BaseLayout,
 } as Meta;
 
-const Simple: Story = (args) => {
+const WithCaption: Story = (args) => {
   return (
     <BaseLayout {...args}>
       <Caption>Base Layout</Caption>
@@ -19,4 +20,4 @@ const Simple: Story = (args) => {
   );
 };
 
-export { Simple };
+export { WithCaption };

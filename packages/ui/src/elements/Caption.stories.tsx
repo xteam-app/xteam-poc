@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import { Caption } from './Caption';
-import { Text } from './Text';
 import React from 'react';
+import { Caption, Text } from '@elements';
 
 export default {
   component: Caption,
@@ -11,13 +10,12 @@ const Simple: Story = (args) => {
   return <Caption {...args}>Caption</Caption>;
 };
 
-const MultiLines: Story<{ header: string; link: string }> = (args) => {
+const SimpleWithCustomText: Story = (args) => {
   return (
     <Caption {...args}>
-      <Text>Poker Team</Text>
-      <Text tw={`text-xs text-blue-200`}>#123</Text>
+      <Text tw={'text-red-500'}>lorem ipsum</Text>
     </Caption>
   );
 };
 
-export { Simple, MultiLines };
+export { Simple, SimpleWithCustomText };

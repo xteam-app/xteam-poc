@@ -1,3 +1,5 @@
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 module.exports = {
   // refs: {
   //   'design-system': {
@@ -19,5 +21,9 @@ module.exports = {
   'framework': '@storybook/react',
   features: {
     storyStoreV7: false
+  },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
+    return config;
   }
 };

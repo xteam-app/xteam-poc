@@ -1,18 +1,17 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Row } from './Row';
-import { Text } from './Text';
+import { FlexRow, Text } from '@elements';
 
 export default {
-  component: Row,
+  component: FlexRow,
 } as Meta;
 
 const Template: Story = (args) => {
   return (
-    <Row {...args}>
+    <FlexRow {...args}>
       <Text>First</Text>
       <Text>Second</Text>
-    </Row>
+    </FlexRow>
   );
 };
 
