@@ -22,6 +22,9 @@ module.exports = {
   features: {
     storyStoreV7: false
   },
+  core: {
+    builder: "webpack5",
+  },
   webpackFinal: async (config, { configType }) => {
     config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;
