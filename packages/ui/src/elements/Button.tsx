@@ -3,7 +3,7 @@ import { Pressable, PressableProps } from 'react-native';
 import { useStyle } from '../utils/useStyle';
 import { BaseProps } from '../types';
 
-interface ButtonProps extends BaseProps, Pick<PressableProps, 'onPress'> {}
+export interface ButtonProps extends BaseProps, PressableProps {}
 
 export const Button: FC<ButtonProps> = ({ tw, children, ...props }) => {
   const style = useStyle(tw);

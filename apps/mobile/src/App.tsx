@@ -1,17 +1,19 @@
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { HomeScreen } from './screens/HomeScreen';
+import { LobbyScreen } from './screens/LobbyScreen';
 
-import { BaseLayout, Caption, PokerGrid, FlexRow, Text } from '@xteam-app/ui';
-import { Alert } from 'react-native';
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <BaseLayout>
-      <FlexRow tw={'items-baseline'}>
-        <Caption>My Team</Caption>
-        <Text>#123</Text>
-      </FlexRow>
-      <PokerGrid onClick={(item) => Alert.alert(item.toString())} />
-    </BaseLayout>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName={'Lobby'}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Lobby" component={LobbyScreen} options={{ title: 'My Team' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
