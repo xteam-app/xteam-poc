@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { FlexRow, Text } from '@elements';
+import { FlexRow, Text } from '.';
 
 export default {
   component: FlexRow,

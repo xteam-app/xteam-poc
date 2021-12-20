@@ -3,11 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components": ["./src/components"],
-      "@elements": ["./src/elements"],
-      "@layouts": ["./src/layouts"],
-      "@screens": ["./src/screens"],
-      "@utils/*": ["./src/utils", "./src/utils/*"],
+//      "@components": ["./src/components"],
+//      "@elements": ["./src/elements"],
+//      "@layouts": ["./src/layouts"],
+//      "@screens": ["./src/screens"],
+//      "@utils/*": ["./src/utils", "./src/utils/*"],
     }
   }
 }

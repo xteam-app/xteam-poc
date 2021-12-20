@@ -1,6 +1,6 @@
 import { useColorScheme } from 'react-native';
 import { Style } from 'twrnc/dist/esm/types';
-import { tw } from '@utils/tailwind';
+import { tw } from './tailwind';
 
 interface Theme {
   text: Style;

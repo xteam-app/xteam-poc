@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { BaseLayout } from './BaseLayout';
-import { Caption, Text } from '@elements';
 import React from 'react';
+import { Caption, Text } from '../elements';
 
 export default {
   component: BaseLayout,

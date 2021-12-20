@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { FlexCol, Text } from '@elements';
+import { FlexCol, Text } from '.';
 
 export default {
   component: FlexCol,

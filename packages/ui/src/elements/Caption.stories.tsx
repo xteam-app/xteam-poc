@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { Caption, Text } from '@elements';
+import { Text } from '.';
+import { Caption } from './Caption';
 
 export default {
   component: Caption,
