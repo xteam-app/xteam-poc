@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
-import { Text } from '../Text';
+import { Text } from '..';
+import { Button, ButtonProps } from '../Button';
 
-export interface ILink {
-  to: string;
-}
+export type BaseLinkProps = ButtonProps;
 
-export const Link: FC<ILink> = ({ to, children }) => {
-  console.log(to);
-  return <Text>{children}</Text>;
+export const Link: FC<BaseLinkProps> = ({ children, ...props }) => {
+  return <Button {...props}>{children}</Button>;
 };
