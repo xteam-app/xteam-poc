@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Text } from '..';
 import { Button, ButtonProps } from '../Button';
 
 export type BaseLinkProps = ButtonProps;
