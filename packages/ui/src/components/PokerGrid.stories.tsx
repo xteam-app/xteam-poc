@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { IPokerGrid, PokerGrid } from './PokerGrid';
-import { baseLayoutDecorator } from '@utils/decorators';
+import { baseLayoutDecorator } from '../utils/decorators';
 
 export default {
   component: PokerGrid,
