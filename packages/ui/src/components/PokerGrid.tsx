@@ -24,20 +24,13 @@ const PokerGrid: FC<IPokerGrid> = ({ deck = defaultDeck, onClick }) => {
         <Button
           key={card}
           tw={`
-            w-25 h-25 mt-1 mb-6 mx-2 justify-center 
-            border-2 border-gray-500
+            w-25 h-25 mt-1 mb-6 mx-2 justify-center items-center
+            border-2 border-gray-500 rounded-xl
             bg-pink-200 dark:bg-gray-900
           `}
           onPress={() => onClick(card)}
         >
-          <Text
-            tw={`
-              text-xl text-center font-medium 
-              bg-transparent uppercase
-            `}
-          >
-            {card}
-          </Text>
+          <Text tw={`text-xl text-center font-medium bg-transparent`}>{card}</Text>
         </Button>
       ))}
     </View>
