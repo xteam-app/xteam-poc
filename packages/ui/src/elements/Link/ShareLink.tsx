@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { ILink, Link } from './Link';
 import { Text } from '../Text';
+import { BaseLink, BaseLinkProps } from './BaseLink';
 
-export const ShareLink: FC<ILink> = ({ children, ...props }) => {
+export const ShareLink: FC<BaseLinkProps> = ({ children, ...props }) => {
   return (
-    <Text tw={`text-base font-normal underline`}>
-      <Link {...props}>{children}</Link>
-    </Text>
+    <BaseLink {...props}>
+      <Text tw={`text-base font-normal underline`}>{children}</Text>
+    </BaseLink>
   );
 };

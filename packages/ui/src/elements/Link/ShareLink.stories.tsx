@@ -1,16 +1,14 @@
 import { Meta, Story } from '@storybook/react';
-import { ILink } from './Link';
 import { ShareLink } from './ShareLink';
+import { BaseLinkProps } from './BaseLink';
 
 export default {
   component: ShareLink,
 } as Meta;
 
-const Simple: Story<ILink> = (args) => {
+const Simple: Story<BaseLinkProps> = (args) => {
   return <ShareLink {...args}>Example Link</ShareLink>;
 };
-Simple.args = {
-  to: 'https://example.com',
-};
+Simple.args = {};
 
 export { Simple };

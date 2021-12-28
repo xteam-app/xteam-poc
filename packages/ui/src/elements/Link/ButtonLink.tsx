@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { BaseLinkProps, Link } from './Link';
+import { BaseLink, BaseLinkProps } from './BaseLink';
 
 export const ButtonLink: FC<BaseLinkProps> = ({ children, ...props }) => {
   return (
-    <Link
+    <BaseLink
       tw={`
         w-42 h-12 mb-6
         flex justify-center items-center
@@ -13,6 +13,6 @@ export const ButtonLink: FC<BaseLinkProps> = ({ children, ...props }) => {
       {...props}
     >
       {children}
-    </Link>
+    </BaseLink>
   );
 };

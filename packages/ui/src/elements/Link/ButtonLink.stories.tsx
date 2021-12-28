@@ -1,16 +1,16 @@
 import { Meta, Story } from '@storybook/react';
-import { ILink } from './Link';
 import { ButtonLink } from './ButtonLink';
+import { baseLayoutDecorator } from '../../utils/decorators';
+import { BaseLinkProps } from './BaseLink';
 
 export default {
   component: ButtonLink,
+  decorators: [baseLayoutDecorator],
 } as Meta;
 
-const Simple: Story<ILink> = (args) => {
+const Simple: Story<BaseLinkProps> = (args) => {
   return <ButtonLink {...args}>Example Link</ButtonLink>;
 };
-Simple.args = {
-  to: 'https://example.com',
-};
+Simple.args = {};
 
 export { Simple };
