@@ -22,9 +22,7 @@ const App = () => {
         <Stack.Navigator
           initialRouteName={Screen.PokerLobby}
           screenOptions={{
-            headerStyle: {
-              backgroundColor: 'red',
-            },
+            headerStyle: {},
           }}
         >
           <Stack.Group>

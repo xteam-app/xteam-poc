@@ -2,7 +2,6 @@ import React, { createContext, FC } from 'react';
 import { useAppColorScheme, useDeviceContext } from 'twrnc';
 import { tw } from '../utils/tailwind';
 import { RnColorScheme } from 'twrnc/dist/esm/types';
-import { Text } from 'react-native';
 
 export interface Theme {
   colorScheme: RnColorScheme;

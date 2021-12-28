@@ -1,7 +1,5 @@
 import { useContext } from 'react';
 import { Theme, ThemeContext } from './ThemeProvider';
-import { tw } from '../utils/tailwind';
-import { useAppColorScheme } from 'twrnc';
 
 // const defaultColors = {
 //   dark: {
