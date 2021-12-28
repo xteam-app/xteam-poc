@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { View } from '../elements';
-import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
-import { useStyle } from '../utils/useStyle';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { useTheme } from '../themes';
+import { tw } from '../utils/tailwind';
 
 export const BaseLayout: FC = ({ children }) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  const styles = useStyle('bg-white dark:bg-black');
+  const { isDarkMode } = useTheme();
 
   return (
-    <SafeAreaView style={styles}>
+    <SafeAreaView style={tw`bg-white dark:bg-gray-800`}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View
         tw={`

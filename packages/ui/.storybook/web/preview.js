@@ -1,4 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { ThemeProvider } from '../../src';
 
 export const parameters = {
   layout: 'fullscreen',
@@ -42,3 +43,11 @@ export const parameters = {
     }
   }
 };
+
+export const decorators = [
+  (Story) => (
+    <ThemeProvider>
+      <Story />
+    </ThemeProvider>
+  ),
+];

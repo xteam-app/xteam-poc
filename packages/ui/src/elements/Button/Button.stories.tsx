@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Button } from './Button';
-import { Alert, StyleSheet } from 'react-native';
-import { Text, View } from './index';
+import { Alert } from 'react-native';
+import { Text } from '..';
 
 const Simple: Story = (args) => {
   return (
@@ -50,27 +50,6 @@ Simple.args = {
 //     </View>
 //   );
 // };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 16,
-  },
-  wrapperCustom: {
-    borderRadius: 8,
-    padding: 6,
-  },
-  logBox: {
-    padding: 20,
-    margin: 10,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#f0f0f0',
-    backgroundColor: '#f9f9f9',
-  },
-});
 
 export default {
   component: Button,
