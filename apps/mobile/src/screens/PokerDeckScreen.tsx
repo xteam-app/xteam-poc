@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { BaseLayout, Caption, FlexRow, PokerGrid, Text } from '@xteam-app/ui';
-import { Routes } from '../consts';
+import { Screen } from '../consts';
 import { RootStackParamList } from '../App';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, Routes.PokerDeck>;
+type ScreenProps = NativeStackScreenProps<RootStackParamList, Screen.PokerDeck>;
 
 export const PokerDeckScreen: FC<ScreenProps> = ({ navigation }) => {
   return (
@@ -15,7 +15,7 @@ export const PokerDeckScreen: FC<ScreenProps> = ({ navigation }) => {
       </FlexRow>
       <PokerGrid
         onClick={(card) =>
-          navigation.navigate(Routes.PokerTable, {
+          navigation.navigate(Screen.PokerTable, {
             title: 'Table',
             card,
           })
