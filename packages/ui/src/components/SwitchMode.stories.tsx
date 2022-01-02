@@ -1,12 +1,12 @@
 import { Meta, Story } from '@storybook/react';
-import { SwitchMode } from './SwitchMode';
-import { baseLayoutDecorator } from '../utils/decorators';
+import { SwitchMode as Component } from './SwitchMode';
+import { containerDecorator } from '../utils/decorators';
 
 export default {
-  component: SwitchMode,
-  decorators: [baseLayoutDecorator],
+  component: Component,
+  decorators: [containerDecorator],
 } as Meta;
 
-const Simple: Story = (args) => <SwitchMode {...args} />;
+const SwitchMode: Story = (args) => <Component {...args} />;
 
-export { Simple };
+export { SwitchMode };
