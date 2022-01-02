@@ -5,7 +5,7 @@ export const parameters = {
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
-    default: 'dark',
+    // default: 'dark',
     values: [
       { name: "light", value: "#eeeeee" },
       { name: "dark", value: "#1f2937" },
