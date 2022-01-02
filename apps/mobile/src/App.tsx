@@ -6,11 +6,13 @@ import { PokerLobbyScreen } from './screens/PokerLobbyScreen';
 import { PokerTableScreen } from './screens/PokerTableScreen';
 import { CardValue, ThemeProvider } from '@xteam-app/ui';
 import { Screen } from './consts';
+import { DevMode } from './screens/DevMode';
 
 export type RootStackParamList = {
   [Screen.PokerLobby]: undefined;
   [Screen.PokerDeck]: undefined;
   [Screen.PokerTable]: { title: string; card: CardValue };
+  [Screen.DevMode]: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -45,6 +47,9 @@ const App = () => {
               component={PokerTableScreen}
               options={({ route }) => ({ title: route.params.title })}
             />
+          </Stack.Group>
+          <Stack.Group>
+            <Stack.Screen name={Screen.DevMode} component={DevMode} />
           </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
