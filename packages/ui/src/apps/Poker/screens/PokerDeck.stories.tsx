@@ -1,15 +1,15 @@
 import { Meta, Story } from '@storybook/react';
-import { Caption, FlexRow, Text } from '../../elements';
-import { PokerGrid } from '../../components';
-import * as PokerGridStories from '../../components/PokerGrid.stories';
-import { BaseLayout } from '../../layouts';
+import { Caption, FlexRow, Text } from '../../../elements';
+import { PokerGrid } from '../../../components';
+import * as PokerGridStories from '../components/PokerGrid.stories';
+import { Container } from '../../../layouts';
 import React from 'react';
 
 export default {} as Meta;
 
 const PokerDeck: Story = (args) => {
   return (
-    <BaseLayout>
+    <Container>
       <FlexRow tw={'items-baseline'}>
         <Caption>My Team</Caption>
         <Text>#123</Text>
@@ -20,7 +20,7 @@ const PokerDeck: Story = (args) => {
           console.log(`onClick ${item}`);
         }}
       />
-    </BaseLayout>
+    </Container>
   );
 };
 

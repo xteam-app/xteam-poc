@@ -1,22 +1,26 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Caption, FlexCol, Link, FlexRow, Text } from '../../elements';
-import { BaseLayout } from '../../layouts';
+import { Button, Caption, FlexCol, FlexRow, Text } from '../../../elements';
+import { Container } from '../../../layouts';
 
 export default {} as Meta;
 
+const onClick = () => {
+  console.log('click');
+};
+
 const PokerLobby: Story = (args) => {
   return (
-    <BaseLayout>
+    <Container>
       <FlexRow tw={'items-baseline'}>
         <Caption>My Team</Caption>
         <Text>#123</Text>
       </FlexRow>
       <FlexCol tw={'flex-1'}>
-        <Link to="/start">Start</Link>
-        <Link to="/join">Join</Link>
+        <Button onPress={onClick}>Start</Button>
+        <Button onPress={onClick}>Join</Button>
       </FlexCol>
-    </BaseLayout>
+    </Container>
   );
 };
 

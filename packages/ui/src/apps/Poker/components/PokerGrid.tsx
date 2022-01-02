@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Button, Text, View } from '../elements';
+import { Button, Text, View } from '../../../elements';
+import { PokerCard } from './PokerCard';
 
 type CardValue = number | string;
 
@@ -21,17 +22,9 @@ const PokerGrid: FC<IPokerGrid> = ({ deck = defaultDeck, onClick }) => {
       `}
     >
       {deck.map((card) => (
-        <Button
-          key={card}
-          tw={`
-            w-25 h-25 mt-1 mb-6 mx-2 justify-center items-center
-            border-2 border-gray-500 rounded-xl
-            bg-pink-200 dark:bg-gray-900
-          `}
-          onPress={() => onClick(card)}
-        >
-          <Text tw={`text-xl text-center font-medium bg-transparent`}>{card}</Text>
-        </Button>
+        <PokerCard key={card} onPress={() => onClick(card)}>
+          {card}
+        </PokerCard>
       ))}
     </View>
   );

@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Button, ButtonProps } from '../Button';
+import { ButtonProps } from '../Button';
+import { BaseButton } from '../Button/BaseButton';
 
 export type BaseLinkProps = ButtonProps;
 
 export const BaseLink: FC<BaseLinkProps> = ({ children, ...props }) => {
-  return <Button {...props}>{children}</Button>;
+  return <BaseButton {...props}>{children}</BaseButton>;
 };
