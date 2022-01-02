@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BaseLayout, Caption, Divider, FlexRow, Text } from '@xteam-app/ui';
+import { Caption, Container, Divider, FlexRow, Text } from '@xteam-app/ui';
 import { RootStackParamList } from '../App';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Screen } from '../consts';
@@ -12,7 +12,7 @@ export const PokerTableScreen: FC<ScreenProps> = ({
   },
 }) => {
   return (
-    <BaseLayout>
+    <Container>
       <FlexRow tw="items-baseline">
         <Caption>My Team</Caption>
         <Text>#123</Text>
@@ -34,6 +34,6 @@ export const PokerTableScreen: FC<ScreenProps> = ({
         <Text>Total</Text>
         <Text>5</Text>
       </FlexRow>
-    </BaseLayout>
+    </Container>
   );
 };

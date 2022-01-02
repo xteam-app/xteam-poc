@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BaseLayout, Caption, FlexRow, PokerGrid, Text } from '@xteam-app/ui';
+import { Caption, Container, FlexRow, PokerGrid, Text } from '@xteam-app/ui';
 import { Screen } from '../consts';
 import { RootStackParamList } from '../App';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -8,7 +8,7 @@ type ScreenProps = NativeStackScreenProps<RootStackParamList, Screen.PokerDeck>;
 
 export const PokerDeckScreen: FC<ScreenProps> = ({ navigation }) => {
   return (
-    <BaseLayout>
+    <Container>
       <FlexRow tw={'items-baseline'}>
         <Caption>My Team</Caption>
         <Text>#123</Text>
@@ -21,6 +21,6 @@ export const PokerDeckScreen: FC<ScreenProps> = ({ navigation }) => {
           })
         }
       />
-    </BaseLayout>
+    </Container>
   );
 };

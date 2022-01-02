@@ -4,9 +4,9 @@ import { BaseProps } from '../types';
 import { tw as tailwind } from '../utils/tailwind';
 import { useTheme } from '../themes';
 
-type IView = BaseProps;
+type ViewProps = BaseProps;
 
-export const View: FC<IView> = ({ tw, ...otherProps }) => {
+export const View: FC<ViewProps> = ({ tw, ...otherProps }) => {
   useTheme();
   const style = [tailwind`bg-white dark:bg-gray-800`, tailwind.style(tw)];
 
