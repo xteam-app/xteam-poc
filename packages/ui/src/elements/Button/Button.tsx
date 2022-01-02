@@ -1,20 +1,29 @@
 import React, { FC } from 'react';
-import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
-import { BaseProps } from '../../types';
 import { Text } from '..';
-import { useTheme } from '../../themes';
 
 import { tw as tailwind } from '../../utils/tailwind';
-
-export interface ButtonProps extends BaseProps, TouchableOpacityProps {}
+import { BaseButton, ButtonProps } from './BaseButton';
 
 export const Button: FC<ButtonProps> = ({ tw, children, ...props }) => {
-  useTheme();
-  const style = tailwind.style('bg-red-700 dark:bg-red-500', tw);
+  const style = tailwind.style(
+    `
+      w-64 p-3 mb-5
+      bg-red-700 dark:bg-red-500
+      rounded
+    `,
+    tw
+  );
 
   return (
-    <TouchableOpacity style={style} {...props}>
-      <Text tw={`uppercase bg-transparent text-white`}>{children}</Text>
-    </TouchableOpacity>
+    <BaseButton style={style} {...props}>
+      <Text
+        tw={`
+          text-center uppercase text-white
+          bg-transparent
+        `}
+      >
+        {children}
+      </Text>
+    </BaseButton>
   );
 };
