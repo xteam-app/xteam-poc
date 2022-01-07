@@ -1,19 +1,20 @@
 import React, { FC } from 'react';
-import { BaseLayout, Caption, FlexCol, FlexRow, Text } from '@xteam-app/ui';
+import { Caption, Container, FlexCol, FlexRow, Text } from '@xteam-app/ui';
 import { Link } from '../components/Link';
-import { Routes } from '../consts';
+import { Screen } from '../consts';
 
 export const PokerLobbyScreen: FC = () => {
   return (
-    <BaseLayout>
+    <Container>
       <FlexRow tw="items-baseline">
         <Caption>My Team</Caption>
         <Text>#123</Text>
       </FlexRow>
       <FlexCol tw="flex-1">
-        <Link to={Routes.PokerDeck}>Start</Link>
-        <Link to={Routes.PokerDeck}>Join</Link>
+        <Link to={Screen.PokerDeck}>Start</Link>
+        <Link to={Screen.PokerDeck}>Join</Link>
+        <Link to={Screen.DevMode}>DevMode</Link>
       </FlexCol>
-    </BaseLayout>
+    </Container>
   );
 };

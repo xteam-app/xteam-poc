@@ -1,2 +1,3 @@
 export * from './Navigation';
-export * from './PokerGrid';
+export * from '../apps/Poker/components/PokerGrid';
+export * from './SwitchMode';

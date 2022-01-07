@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
 import { View as DefaultView } from 'react-native';
-import { useStyle } from '../utils/useStyle';
 import { BaseProps } from '../types';
+import { tw as tailwind } from '../utils/tailwind';
+import { useTheme } from '../themes';
 
-type IView = BaseProps;
+type ViewProps = BaseProps;
 
-export const View: FC<IView> = ({ tw, ...otherProps }) => {
-  const style = useStyle(tw);
+export const View: FC<ViewProps> = ({ tw, ...otherProps }) => {
+  useTheme();
+  const style = tailwind.style('bg-white dark:bg-gray-800', tw);
+
   return <DefaultView style={style} {...otherProps} />;
 };
