@@ -13,7 +13,13 @@ export interface IconProps extends BaseProps {
 }
 
 export const Icon: FC<IconProps> = ({ name, tw, ...props }) => {
-  const style = tailwind.style('w-10 h-10 text-red-700 dark:text-red-500', tw);
+  const style = tailwind.style(
+    `
+      w-10 h-10
+      text-red-700 dark:text-red-500
+    `,
+    tw
+  );
 
   const Element = ComponentsMap[name];
   return <Element style={style} {...props} />;

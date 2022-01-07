@@ -5,18 +5,15 @@ import { Icon, IconValue } from '../elements';
 
 export const SwitchMode: FC = () => {
   const { colorScheme, toggleColorScheme } = useTheme();
-
-  if (colorScheme === 'light') {
-    return (
-      <BaseButton tw={'p-2'} onPress={toggleColorScheme}>
-        <Icon name={IconValue.sun} />
-      </BaseButton>
-    );
-  }
+  const tw = `
+    w-11 h-11 
+    justify-center items-center
+  `;
+  const iconMode = colorScheme === 'light' ? IconValue.sun : IconValue.moon;
 
   return (
-    <BaseButton tw={'m-2'} onPress={toggleColorScheme}>
-      <Icon name={IconValue.moon} />
+    <BaseButton tw={tw} onPress={toggleColorScheme}>
+      <Icon name={iconMode} />
     </BaseButton>
   );
 };

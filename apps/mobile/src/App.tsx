@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { PokerDeckScreen } from './screens/PokerDeckScreen';
 import { PokerLobbyScreen } from './screens/PokerLobbyScreen';
 import { PokerTableScreen } from './screens/PokerTableScreen';
-import { CardValue, ThemeProvider } from '@xteam-app/ui';
+import { CardValue, SwitchMode, ThemeProvider } from '@xteam-app/ui';
 import { Screen } from './consts';
 import { DevMode } from './screens/DevMode';
 
@@ -24,7 +24,7 @@ const App = () => {
         <Stack.Navigator
           initialRouteName={Screen.PokerLobby}
           screenOptions={{
-            headerStyle: {},
+            headerRight: () => <SwitchMode />,
           }}
         >
           <Stack.Group>
@@ -32,7 +32,7 @@ const App = () => {
               name={Screen.PokerLobby}
               component={PokerLobbyScreen}
               options={{
-                headerShown: false,
+                headerShown: true,
               }}
             />
             <Stack.Screen
