@@ -8,7 +8,7 @@ type ViewProps = BaseProps;
 
 export const View: FC<ViewProps> = ({ tw, ...otherProps }) => {
   useTheme();
-  const style = [tailwind`bg-white dark:bg-gray-800`, tailwind.style(tw)];
+  const style = tailwind.style('bg-white dark:bg-gray-800', tw);
 
   return <DefaultView style={style} {...otherProps} />;
 };

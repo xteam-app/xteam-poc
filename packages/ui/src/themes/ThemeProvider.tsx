@@ -1,4 +1,4 @@
-import React, { createContext, FC, useEffect } from 'react';
+import React, { createContext, FC, useEffect, useLayoutEffect } from 'react';
 import { useAppColorScheme, useDeviceContext } from 'twrnc';
 import { tw } from '../utils/tailwind';
 import { RnColorScheme } from 'twrnc/dist/esm/types';
@@ -17,7 +17,7 @@ export const ThemeProvider: FC = ({ children }) => {
 
   const [colorScheme, toggleColorScheme, setColorScheme] = useAppColorScheme(tw, 'light');
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setColorScheme('dark');
   }, []);
 
