@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { PokerDeckScreen } from './screens/PokerDeckScreen';
 import { PokerLobbyScreen } from './screens/PokerLobbyScreen';
 import { PokerTableScreen } from './screens/PokerTableScreen';
-import { CardValue, SwitchMode, ThemeProvider } from '@xteam-app/ui';
+import { CardValue, SwitchMode, Text, ThemeProvider } from '@xteam-app/ui';
 import { Screen } from './consts';
 import { DevMode } from './screens/DevMode';
 
@@ -24,22 +24,37 @@ const App = () => {
         <Stack.Navigator
           initialRouteName={Screen.PokerLobby}
           screenOptions={{
-            headerRight: () => <SwitchMode />,
+            headerBackTitleVisible: false,
+            headerTransparent: true,
+            headerBackVisible: true,
+            headerTitle: ({ children, ...props }) => (
+              <Text tw={`uppercase font-bold`} {...props}>
+                {children}
+              </Text>
+            ),
           }}
         >
-          <Stack.Group>
+          <Stack.Group
+            screenOptions={{
+              headerRight: () => <SwitchMode />,
+            }}
+          >
             <Stack.Screen
               name={Screen.PokerLobby}
               component={PokerLobbyScreen}
               options={{
-                headerShown: true,
+                title: 'Lobby',
               }}
             />
             <Stack.Screen
               name={Screen.PokerDeck}
               component={PokerDeckScreen}
-              options={{ title: 'My Team', headerShown: true }}
+              options={{
+                title: 'My Team',
+                headerRight: () => <Text>#123</Text>,
+              }}
             />
+            <Stack.Screen name={Screen.DevMode} component={DevMode} />
           </Stack.Group>
           <Stack.Group screenOptions={{ presentation: 'modal' }}>
             <Stack.Screen
@@ -47,9 +62,6 @@ const App = () => {
               component={PokerTableScreen}
               options={({ route }) => ({ title: route.params.title })}
             />
-          </Stack.Group>
-          <Stack.Group>
-            <Stack.Screen name={Screen.DevMode} component={DevMode} />
           </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
