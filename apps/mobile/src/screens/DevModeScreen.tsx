@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
 import { Button, Caption, Container, Text, View } from '@xteam-app/ui';
 import { ScrollView } from 'react-native';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { RootStackParamList } from '../App';
+import { Screen } from '../consts';
 
-export const DevModeScreen: FC = () => {
+type ScreenProps = BottomTabScreenProps<RootStackParamList, Screen.Home>;
+
+export const DevModeScreen: FC<ScreenProps> = ({ navigation }) => {
   return (
     <Container>
       <View tw={'flex-shrink mb-7'}>
@@ -26,6 +31,13 @@ export const DevModeScreen: FC = () => {
 
       <Button>Ok</Button>
       <Button>cancel</Button>
+      <Button
+        onPress={() => {
+          navigation.jumpTo(Screen.Home);
+        }}
+      >
+        go to Deck
+      </Button>
     </Container>
   );
 };
