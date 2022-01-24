@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/xteam-app/xteam#readme",
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "@xteam-app/ui": "*",

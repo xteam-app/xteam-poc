@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Button, Caption, Container, Text, View } from '@xteam-app/ui';
 import { ScrollView } from 'react-native';
 
-export const DevMode: FC = () => {
+export const DevModeScreen: FC = () => {
   return (
     <Container>
       <View tw={'flex-shrink mb-7'}>

@@ -13,7 +13,6 @@ export const PokerLobbyScreen: FC = () => {
       <FlexCol tw="flex-1">
         <Link to={Screen.PokerDeck}>Start</Link>
         <Link to={Screen.PokerDeck}>Join</Link>
-        <Link to={Screen.DevMode}>DevMode</Link>
       </FlexCol>
     </Container>
   );

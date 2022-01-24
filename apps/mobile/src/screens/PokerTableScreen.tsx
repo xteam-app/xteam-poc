@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { Caption, Container, Divider, FlexRow, Text, View } from '@xteam-app/ui';
-import { RootStackParamList } from '../App';
+import { PokerStackParamList } from '../App';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Screen } from '../consts';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, Screen.PokerTable>;
+type ScreenProps = NativeStackScreenProps<PokerStackParamList, Screen.PokerTable>;
 
 export const PokerTableScreen: FC<ScreenProps> = ({
   route: {

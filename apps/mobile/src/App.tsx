@@ -1,69 +1,78 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { PokerDeckScreen } from './screens/PokerDeckScreen';
-import { PokerLobbyScreen } from './screens/PokerLobbyScreen';
-import { PokerTableScreen } from './screens/PokerTableScreen';
-import { CardValue, SwitchMode, Text, ThemeProvider } from '@xteam-app/ui';
+import { ThemeProvider } from '@xteam-app/ui';
 import { Screen } from './consts';
-import { DevMode } from './screens/DevMode';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { HomeStackScreen } from './screens/Home/HomeStackScreen';
+import { DevModeScreen } from './screens/DevModeScreen';
 
 export type RootStackParamList = {
-  [Screen.PokerLobby]: undefined;
-  [Screen.PokerDeck]: undefined;
-  [Screen.PokerTable]: { title: string; card: CardValue };
+  [Screen.Home]: undefined;
+  [Screen.Auth]: undefined;
   [Screen.DevMode]: undefined;
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const getTabBarVisibility = (route: any) => {
+  const routeName = route.state ? route.state.routes[route.state.index].name : '';
 
+  console.log({ route });
+  console.log({ routeName });
+  if (routeName === Screen.PokerDeck) {
+    return false;
+  }
+
+  return true;
+};
+
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+
+function getHeaderTitle(route: any) {
+  // If the focused route is not found, we need to assume it's the initial screen
+  // This can happen during if there hasn't been any navigation inside the screen
+  // In our case, it's "Feed" as that's the first screen inside the navigator
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+
+  switch (routeName) {
+    case Screen.PokerLobby:
+      return 'Lobby';
+    case Screen.PokerDeck:
+      return 'Deck';
+    case 'Account':
+      return 'My account';
+  }
+}
+
+const getTabBarVisability = (route: any) => {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? Screen.PokerLobby;
+
+  if (routeName === Screen.PokerLobby) {
+    return 'flex';
+  }
+
+  return 'none';
+};
+
+const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <ThemeProvider>
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName={Screen.PokerLobby}
+        <Tab.Navigator
+          initialRouteName={Screen.Home}
           screenOptions={{
-            headerBackTitleVisible: false,
-            headerTransparent: true,
-            headerBackVisible: true,
-            headerTitle: ({ children, ...props }) => (
-              <Text tw={`uppercase font-bold`} {...props}>
-                {children}
-              </Text>
-            ),
+            headerShown: false,
           }}
         >
-          <Stack.Group
-            screenOptions={{
-              headerRight: () => <SwitchMode />,
-            }}
-          >
-            <Stack.Screen
-              name={Screen.PokerLobby}
-              component={PokerLobbyScreen}
-              options={{
-                title: 'Lobby',
-              }}
-            />
-            <Stack.Screen
-              name={Screen.PokerDeck}
-              component={PokerDeckScreen}
-              options={{
-                title: 'My Team',
-                headerRight: () => <Text>#123</Text>,
-              }}
-            />
-            <Stack.Screen name={Screen.DevMode} component={DevMode} />
-          </Stack.Group>
-          <Stack.Group screenOptions={{ presentation: 'modal' }}>
-            <Stack.Screen
-              name={Screen.PokerTable}
-              component={PokerTableScreen}
-              options={({ route }) => ({ title: route.params.title })}
-            />
-          </Stack.Group>
-        </Stack.Navigator>
+          <Tab.Screen
+            name={Screen.Home}
+            component={HomeStackScreen}
+            options={({ route }) => ({
+              headerTitle: getHeaderTitle(route),
+              tabBarStyle: { display: getTabBarVisability(route) },
+            })}
+          />
+          <Tab.Screen name={Screen.DevMode} component={DevModeScreen} />
+        </Tab.Navigator>
       </NavigationContainer>
     </ThemeProvider>
   );
