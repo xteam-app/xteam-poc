@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useLayoutEffect, useState } from 'react';
 import { Button, Caption, Container } from '@xteam-app/ui';
 import { Screen } from '../../consts';
+import { useMountCount } from '../../useMountCount';
 
 export const CostsAddScreen: FC = ({ navigation }) => {
+  useMountCount();
   return (
     <Container>
       <Caption>New cost</Caption>

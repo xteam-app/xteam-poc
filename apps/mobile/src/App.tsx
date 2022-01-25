@@ -2,30 +2,36 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@xteam-app/ui';
 import { Screen } from './consts';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DevModeScreen } from './screens/DevModeScreen';
 import { RootStackParamList } from './router';
-import { DashboardScreen } from './screens/Dashboard/DashboardScreen';
-import { CostsStack } from './screens/Costs/CostsStack';
 import { InvoicesScreen } from './screens/Invoices/InvoicesScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { CostsAddScreen } from './screens/Costs/CostsAddScreen';
+import { CostsAdd2Screen } from './screens/Costs/CostsAdd2Screen';
+import { CostsAddFinishScreen } from './screens/Costs/CostsAddFinishScreen';
+import { MainStackScreen } from './screens/MainStackScreen';
 
-const Tab = createBottomTabNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <ThemeProvider>
       <NavigationContainer>
-        <Tab.Navigator
+        <Stack.Navigator
           // tabBar={MyTabBar}
-          screenOptions={{
-            headerShown: false,
-          }}
+          screenOptions={{ headerShown: true }}
         >
-          <Tab.Screen name={Screen.Dashboard} component={DashboardScreen} />
-          <Tab.Screen name={Screen.Costs} component={CostsStack} />
-          <Tab.Screen name={Screen.Invoices} component={InvoicesScreen} />
-          <Tab.Screen name={Screen.DevMode} component={DevModeScreen} />
-        </Tab.Navigator>
+          <Stack.Screen name={Screen.Main} component={MainStackScreen} options={{ headerShown: true }} />
+          <Stack.Group>
+            <Stack.Screen name={Screen.CostsAdd} component={CostsAddScreen} />
+            <Stack.Screen name={Screen.CostsAdd2} component={CostsAdd2Screen} />
+            <Stack.Screen name={Screen.Invoices} component={InvoicesScreen} />
+            <Stack.Screen name={Screen.DevMode} component={DevModeScreen} />
+          </Stack.Group>
+          <Stack.Group screenOptions={{ presentation: 'modal' }}>
+            <Stack.Screen name={Screen.CostsAddFinish} component={CostsAddFinishScreen} />
+          </Stack.Group>
+        </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
   );

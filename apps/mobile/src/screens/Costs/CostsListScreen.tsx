@@ -6,7 +6,7 @@ export const CostsListScreen: FC = ({ navigation, route }) => {
   return (
     <Container>
       <Caption>All Costs</Caption>
-      <Button onPress={() => navigation.push(Screen.CostsAdd)}>Add new</Button>
+      <Button onPress={() => navigation.navigate(Screen.CostsAdd)}>Add new</Button>
     </Container>
   );
 };

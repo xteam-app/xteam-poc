@@ -31,13 +31,6 @@ export const DevModeScreen: FC<ScreenProps> = ({ navigation }) => {
 
       <Button>Ok</Button>
       <Button>cancel</Button>
-      <Button
-        onPress={() => {
-          navigation.navigate(Screen.Poker, { screen: Screen.PokerDeck });
-        }}
-      >
-        go to Deck
-      </Button>
     </Container>
   );
 };

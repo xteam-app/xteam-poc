@@ -6,9 +6,9 @@ export const CostsAdd2Screen: FC = ({ navigation }) => {
   return (
     <Container>
       <Caption>Costs add</Caption>
-      <Button onPress={() => navigation.popToTop()}>Error Finish</Button>
-      <Button onPress={() => navigation.navigate(Screen.CostsList)}>Success Finish</Button>
-      <Button onPress={() => navigation.navigate(Screen.CostsAddFinish)}>Save</Button>
+      <Button onPress={() => navigation.popToTop()}>pop to top Finish</Button>
+      <Button onPress={() => navigation.navigate(Screen.Main, { screen: Screen.MainCosts })}>Go to List</Button>
+      <Button onPress={() => navigation.navigate(Screen.CostsAddFinish)}>Modal Finish</Button>
     </Container>
   );
 };

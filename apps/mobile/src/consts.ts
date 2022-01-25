@@ -1,4 +1,9 @@
 export enum Screen {
+  Main = 'Main',
+  MainDashboard = 'MainDashboard',
+  MainCosts = 'MainCosts',
+  MainInvoices = 'MainInvoices',
+  MainDevMode = 'MainDevMode',
   Dashboard = 'Dashboard',
   Costs = 'Costs',
   CostsList = 'CostsList',
