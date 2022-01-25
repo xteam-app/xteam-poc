@@ -6,10 +6,9 @@ import { DevModeScreen } from './screens/DevModeScreen';
 import { RootStackParamList } from './router';
 import { InvoicesScreen } from './screens/Invoices/InvoicesScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CostsAddScreen } from './screens/Costs/CostsAddScreen';
-import { CostsAdd2Screen } from './screens/Costs/CostsAdd2Screen';
 import { CostsAddFinishScreen } from './screens/Costs/CostsAddFinishScreen';
 import { MainStackScreen } from './screens/MainStackScreen';
+import { CostsStack } from './screens/Costs/CostsStack';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -23,8 +22,7 @@ const App = () => {
         >
           <Stack.Screen name={Screen.Main} component={MainStackScreen} options={{ headerShown: true }} />
           <Stack.Group>
-            <Stack.Screen name={Screen.CostsAdd} component={CostsAddScreen} />
-            <Stack.Screen name={Screen.CostsAdd2} component={CostsAdd2Screen} />
+            <Stack.Screen name={Screen.Costs} component={CostsStack} />
             <Stack.Screen name={Screen.Invoices} component={InvoicesScreen} />
             <Stack.Screen name={Screen.DevMode} component={DevModeScreen} />
           </Stack.Group>

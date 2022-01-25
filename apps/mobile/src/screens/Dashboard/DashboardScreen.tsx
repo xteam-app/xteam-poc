@@ -8,7 +8,7 @@ export const DashboardScreen: FC = ({ navigation }) => {
     <Container>
       <Caption>Dashboard screen</Caption>
       <View tw={'flex-1 justify-center'}>
-        <Button onPress={() => navigation.navigate(Screen.CostsAdd)}>Add Cost</Button>
+        <Button onPress={() => navigation.navigate(Screen.Costs, { screen: Screen.CostsAdd })}>Add Cost</Button>
         <Link to={Screen.Invoices}>Invoices</Link>
       </View>
     </Container>

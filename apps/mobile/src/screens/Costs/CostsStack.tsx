@@ -11,12 +11,8 @@ export const CostsStack: FC = () => {
   return (
     <Stack.Navigator initialRouteName={Screen.CostsList}>
       <Stack.Group>
-        {/*<Stack.Screen name={Screen.CostsList} component={CostsListScreen} />*/}
         <Stack.Screen name={Screen.CostsAdd} component={CostsAddScreen} />
         <Stack.Screen name={Screen.CostsAdd2} component={CostsAdd2Screen} />
-      </Stack.Group>
-      <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name={Screen.CostsAddFinish} component={CostsAddFinishScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

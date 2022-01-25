@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import { Button, Caption, Container } from '@xteam-app/ui';
 import { Screen } from '../../consts';
-import { useFocusEffect } from '@react-navigation/native';
-
 import { CommonActions } from '@react-navigation/native';
 
 const resetState = (state: any) => {
@@ -32,6 +30,7 @@ export const CostsAddFinishScreen: FC = ({ navigation, route }) => {
     <Container>
       <Caption>Costs Saved</Caption>
       <Button onPress={() => navigation.popToTop()}>Pop to top</Button>
+      <Button onPress={() => navigation.goBack()}>go back</Button>
       <Button onPress={() => navigation.navigate(Screen.Main, { screen: Screen.MainCosts })}>go to list</Button>
     </Container>
   );
