@@ -1,9 +1,11 @@
 export enum Screen {
-  Home = 'Home',
-  Auth = 'Auth',
-  Poker = 'Poker',
-  PokerDeck = 'PokerDeck',
-  PokerLobby = 'PokerLobby',
-  PokerTable = 'PokerTable',
+  Dashboard = 'Dashboard',
+  Costs = 'Costs',
+  CostsList = 'CostsList',
+  CostsAdd = 'CostsAdd',
+  CostsAdd2 = 'CostsAdd2',
+  CostsAddFinish = 'CostsAddFinish',
+  CostsView = 'CostsView',
+  Invoices = 'Invoices',
   DevMode = 'DevMode',
 }
