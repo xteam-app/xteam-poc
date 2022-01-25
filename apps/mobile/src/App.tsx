@@ -1,69 +1,28 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { PokerDeckScreen } from './screens/PokerDeckScreen';
-import { PokerLobbyScreen } from './screens/PokerLobbyScreen';
-import { PokerTableScreen } from './screens/PokerTableScreen';
-import { CardValue, SwitchMode, Text, ThemeProvider } from '@xteam-app/ui';
+import { ThemeProvider } from '@xteam-app/ui';
 import { Screen } from './consts';
-import { DevMode } from './screens/DevMode';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { PokerStackScreen } from './screens/Poker/PokerStackScreen';
+import { DevModeScreen } from './screens/DevModeScreen';
+import { RootStackParamList } from './router';
 
-export type RootStackParamList = {
-  [Screen.PokerLobby]: undefined;
-  [Screen.PokerDeck]: undefined;
-  [Screen.PokerTable]: { title: string; card: CardValue };
-  [Screen.DevMode]: undefined;
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <ThemeProvider>
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName={Screen.PokerLobby}
+        <Tab.Navigator
+          // tabBar={MyTabBar}
+          initialRouteName={Screen.Poker}
           screenOptions={{
-            headerBackTitleVisible: false,
-            headerTransparent: true,
-            headerBackVisible: true,
-            headerTitle: ({ children, ...props }) => (
-              <Text tw={`uppercase font-bold`} {...props}>
-                {children}
-              </Text>
-            ),
+            headerShown: false,
           }}
         >
-          <Stack.Group
-            screenOptions={{
-              headerRight: () => <SwitchMode />,
-            }}
-          >
-            <Stack.Screen
-              name={Screen.PokerLobby}
-              component={PokerLobbyScreen}
-              options={{
-                title: 'Lobby',
-              }}
-            />
-            <Stack.Screen
-              name={Screen.PokerDeck}
-              component={PokerDeckScreen}
-              options={{
-                title: 'My Team',
-                headerRight: () => <Text>#123</Text>,
-              }}
-            />
-            <Stack.Screen name={Screen.DevMode} component={DevMode} />
-          </Stack.Group>
-          <Stack.Group screenOptions={{ presentation: 'modal' }}>
-            <Stack.Screen
-              name={Screen.PokerTable}
-              component={PokerTableScreen}
-              options={({ route }) => ({ title: route.params.title })}
-            />
-          </Stack.Group>
-        </Stack.Navigator>
+          <Tab.Screen name={Screen.Poker} component={PokerStackScreen} />
+          <Tab.Screen name={Screen.DevMode} component={DevModeScreen} />
+        </Tab.Navigator>
       </NavigationContainer>
     </ThemeProvider>
   );
