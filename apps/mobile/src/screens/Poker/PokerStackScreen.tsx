@@ -1,31 +1,25 @@
 import React, { FC, useLayoutEffect } from 'react';
 import { Screen } from '../../consts';
-import { CardValue, SwitchMode, Text } from '@xteam-app/ui';
-import { PokerLobbyScreen } from '../PokerLobbyScreen';
-import { PokerDeckScreen } from '../PokerDeckScreen';
-import { PokerTableScreen } from '../PokerTableScreen';
+import { SwitchMode, Text } from '@xteam-app/ui';
+import { PokerLobbyScreen } from './PokerLobbyScreen';
+import { PokerDeckScreen } from './PokerDeckScreen';
+import { PokerTableScreen } from './PokerTableScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { RootStackParamList } from '../../App';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import { PokerStackParamList, RootStackParamList } from '../../router';
 
-export type PokerStackParamList = {
-  [Screen.PokerLobby]: undefined;
-  [Screen.PokerDeck]: undefined;
-  [Screen.PokerTable]: { title: string; card: CardValue };
-};
-const Stack = createNativeStackNavigator<PokerStackParamList>();
+type ScreenProps = BottomTabScreenProps<RootStackParamList, Screen.Poker>;
 
-const getTabBarVisibility = (route: any) => {
+const getTabBarVisibility = (route: ScreenProps['route']) => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? Screen.PokerLobby;
   return routeName === Screen.PokerLobby;
 };
 
-type ScreenProps = BottomTabScreenProps<RootStackParamList, Screen.Home>;
+const Stack = createNativeStackNavigator<PokerStackParamList>();
 
-export const HomeStackScreen: FC<ScreenProps> = ({ navigation, route }) => {
+export const PokerStackScreen: FC<ScreenProps> = ({ navigation, route }) => {
   useLayoutEffect(() => {
-    console.log('in');
     navigation.setOptions({
       tabBarStyle: {
         display: getTabBarVisibility(route) ? 'flex' : 'none',
@@ -47,11 +41,7 @@ export const HomeStackScreen: FC<ScreenProps> = ({ navigation, route }) => {
         ),
       }}
     >
-      <Stack.Group
-        screenOptions={{
-          headerRight: () => <SwitchMode />,
-        }}
-      >
+      <Stack.Group screenOptions={{ headerRight: () => <SwitchMode /> }}>
         <Stack.Screen
           name={Screen.PokerLobby}
           component={PokerLobbyScreen}

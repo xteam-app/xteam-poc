@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { Button, Caption, Container, Text, View } from '@xteam-app/ui';
 import { ScrollView } from 'react-native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { RootStackParamList } from '../App';
 import { Screen } from '../consts';
+import { RootStackParamList } from '../router';
 
-type ScreenProps = BottomTabScreenProps<RootStackParamList, Screen.Home>;
+type ScreenProps = BottomTabScreenProps<RootStackParamList, Screen.DevMode>;
 
 export const DevModeScreen: FC<ScreenProps> = ({ navigation }) => {
   return (
@@ -33,7 +33,7 @@ export const DevModeScreen: FC<ScreenProps> = ({ navigation }) => {
       <Button>cancel</Button>
       <Button
         onPress={() => {
-          navigation.jumpTo(Screen.Home);
+          navigation.navigate(Screen.Poker, { screen: Screen.PokerDeck });
         }}
       >
         go to Deck

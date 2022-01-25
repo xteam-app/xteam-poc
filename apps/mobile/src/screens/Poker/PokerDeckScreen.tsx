@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Caption, Container, PokerGrid } from '@xteam-app/ui';
-import { Screen } from '../consts';
-import { PokerStackParamList } from '../App';
+import { Screen } from '../../consts';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { PokerStackParamList } from '../../router';
 
 type ScreenProps = NativeStackScreenProps<PokerStackParamList, Screen.PokerDeck>;
 
