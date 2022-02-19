@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "echo \"Error: no start specified\" && exit 1",
-    "start:mobile": "yarn workspace @xteam-app/mobile ios",
+    "start:mobile:ios": "yarn workspace @xteam-app/mobile ios",
     "start:ui": "yarn workspace @xteam-app/ui storybook",
     "start:ui:doc": "yarn workspace @xteam-app/ui storybook:docs",
     "test": "echo \"Error: no test specified\" && exit 1",
