@@ -1,16 +1,13 @@
 import React, { FC } from 'react';
 import { Container, Divider, FlexRow, Text, View } from '@xteam-app/ui';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Screen } from '../../consts';
-import { PokerStackParamList } from '../../router';
+import { PokerStackScreenProps } from '../../router/router';
+import { Screen } from '../../router/routes';
 
-type ScreenProps = NativeStackScreenProps<PokerStackParamList, Screen.PokerTable>;
-
-export const PokerTableScreen: FC<ScreenProps> = ({
-  route: {
+export const PokerTableScreen: FC<PokerStackScreenProps<Screen.PokerTable>> = ({ route }) => {
+  const {
     params: { card },
-  },
-}) => {
+  } = route;
+
   return (
     <Container>
       <View tw="w-full flex-row justify-between">

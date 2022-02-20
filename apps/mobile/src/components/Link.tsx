@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Screen } from '../consts';
 import { Button } from '@xteam-app/ui';
+import { Screen } from '../router/routes';
 
 interface LinkProps {
   to: Screen;

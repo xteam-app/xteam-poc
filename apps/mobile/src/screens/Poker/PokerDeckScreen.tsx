@@ -1,15 +1,13 @@
 import React, { FC } from 'react';
 import { Caption, Container, PokerGrid } from '@xteam-app/ui';
-import { Screen } from '../../consts';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { PokerStackParamList } from '../../router';
+import { PokerStackScreenProps } from '../../router/router';
+import { Screen } from '../../router/routes';
 
-type ScreenProps = NativeStackScreenProps<PokerStackParamList, Screen.PokerDeck>;
-
-export const PokerDeckScreen: FC<ScreenProps> = ({ navigation }) => {
+export const PokerDeckScreen: FC<PokerStackScreenProps<Screen.PokerDeck>> = ({ navigation }) => {
   return (
     <Container>
       <Caption>Deck</Caption>
+
       <PokerGrid
         onClick={(card) =>
           navigation.navigate(Screen.PokerTable, {

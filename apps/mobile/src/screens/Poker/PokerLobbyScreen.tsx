@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { Caption, Container, FlexCol, FlexRow, Text } from '@xteam-app/ui';
-import { Link } from '../../components/Link';
-import { Screen } from '../../consts';
+import { Button, Caption, Container, FlexCol, FlexRow, Text } from '@xteam-app/ui';
+import { Screen } from '../../router/routes';
+import { HomeTabScreenProps } from '../../router/router';
 
-export const PokerLobbyScreen: FC = () => {
+export const PokerLobbyScreen: FC<HomeTabScreenProps<Screen.PokerTab>> = ({ navigation }) => {
   return (
     <Container>
       <FlexRow tw="items-baseline">
@@ -11,9 +11,17 @@ export const PokerLobbyScreen: FC = () => {
         <Text>#123</Text>
       </FlexRow>
       <FlexCol tw="flex-1">
-        <Link to={Screen.PokerDeck}>Start</Link>
-        <Link to={Screen.PokerDeck}>Deck</Link>
-        <Link to={Screen.DevMode}>Dev Mode</Link>
+        <Button
+          onPress={() =>
+            navigation.push(Screen.PokerStack, {
+              screen: Screen.PokerDeck,
+            })
+          }
+        >
+          Start
+        </Button>
+        <Button onPress={() => navigation.jumpTo(Screen.SettingsTab)}>Settings</Button>
+        <Button onPress={() => navigation.jumpTo(Screen.TimerTab)}>Timer</Button>
       </FlexCol>
     </Container>
   );

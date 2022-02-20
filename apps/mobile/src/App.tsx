@@ -1,28 +1,27 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@xteam-app/ui';
-import { Screen } from './consts';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { PokerStackScreen } from './screens/Poker/PokerStackScreen';
-import { DevModeScreen } from './screens/DevModeScreen';
-import { RootStackParamList } from './router';
+import { Screen } from './router/routes';
+import { RootStackParamList } from './router/router';
+import { PokerStackScreen } from './router/PokerStackScreen';
+import { TabsStack } from './router/TabsStack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Tab = createBottomTabNavigator<RootStackParamList>();
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <ThemeProvider>
       <NavigationContainer>
-        <Tab.Navigator
-          // tabBar={MyTabBar}
-          initialRouteName={Screen.Poker}
+        <RootStack.Navigator
           screenOptions={{
-            headerShown: false,
+            headerBackTitleVisible: false,
+            headerBackVisible: true,
           }}
         >
-          <Tab.Screen name={Screen.Poker} component={PokerStackScreen} />
-          <Tab.Screen name={Screen.DevMode} component={DevModeScreen} />
-        </Tab.Navigator>
+          <RootStack.Screen name={Screen.HomeStack} component={TabsStack} />
+          <RootStack.Screen name={Screen.PokerStack} component={PokerStackScreen} />
+        </RootStack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
   );
