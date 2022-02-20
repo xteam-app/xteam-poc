@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import { Button, Caption, Container, Text, View } from '@xteam-app/ui';
 import { ScrollView } from 'react-native';
+import { HomeTabScreenProps } from '../router/router';
+import { Screen } from '../router/routes';
 
-export const DevMode: FC = () => {
+export const DevModeScreen: FC<HomeTabScreenProps<Screen.DevMode>> = ({ navigation }) => {
   return (
     <Container>
       <View tw={'flex-shrink mb-7'}>
@@ -24,8 +26,16 @@ export const DevMode: FC = () => {
         </ScrollView>
       </View>
 
-      <Button>Ok</Button>
-      <Button>cancel</Button>
+      <Button onPress={() => navigation.jumpTo(Screen.SettingsTab)}>Settings</Button>
+      <Button onPress={() => navigation.jumpTo(Screen.TimerTab)}>Timer</Button>
+      <Button onPress={() => navigation.jumpTo(Screen.PokerTab)}>Poker</Button>
+      <Button
+        onPress={() => {
+          navigation.push(Screen.PokerStack, { screen: Screen.PokerDeck });
+        }}
+      >
+        go to Deck
+      </Button>
     </Container>
   );
 };
