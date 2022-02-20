@@ -20,8 +20,6 @@ export const PokerLobbyScreen: FC<HomeTabScreenProps<Screen.PokerTab>> = ({ navi
         >
           Start
         </Button>
-        <Button onPress={() => navigation.jumpTo(Screen.SettingsTab)}>Settings</Button>
-        <Button onPress={() => navigation.jumpTo(Screen.TimerTab)}>Timer</Button>
       </FlexCol>
     </Container>
   );
