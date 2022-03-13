@@ -1,5 +1,5 @@
 {
-  "name": "@xteam-app/web",
+  "name": "@xteam-app/deprecated-web",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,8 @@
   "author": "Alex Iliushyk <ailushyk@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native-web": "^0.17.7"
   }
 }
