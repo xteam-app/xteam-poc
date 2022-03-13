@@ -1,31 +1,19 @@
 {
-  "name": "@xteam-app/mobile",
+  "name": "@xteam-app/core",
   "version": "0.0.1",
-  "private": true,
+  "description": "",
+  "main": "src/index",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xteam-app/xteam.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Alex Iliushyk <ailushyk@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xteam-app/xteam/issues"
-  },
-  "homepage": "https://github.com/xteam-app/xteam#readme",
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "@react-navigation/stack": "^6.0.11",
-    "@xteam-app/core": "*",
     "@xteam-app/ui": "*",
     "react": "17.0.2",
     "react-native": "0.66.3",
@@ -48,19 +36,5 @@
     "react-native-monorepo-tools": "^1.1.3",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
-  },
-  "resolutions": {
-    "@types/react": "^17"
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
   }
 }
