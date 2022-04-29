@@ -4,10 +4,11 @@
   "private": true,
   "description": "XTeam app",
   "scripts": {
-    "start": "echo \"Error: no start specified\" && exit 1",
-    "start:mobile:ios": "yarn workspace @xteam-app/mobile ios",
-    "start:ui": "yarn workspace @xteam-app/ui storybook",
-    "start:ui:doc": "yarn workspace @xteam-app/ui storybook:docs",
+    "start": "npm -w @xteam-app/expo-app run start",
+    "start:ios": "npm -w @xteam-app/expo-app run ios -- --localhost",
+    "storybook:web": "npm -w @xteam-app/core run storybook",
+    "storybook:ios": "npm -w @xteam-app/core run ios -- --ios --localhost",
+    "storybook": "run-p storybook:*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf package-lock.json"
   },
@@ -22,7 +23,9 @@
     "url": "https://github.com/xteam-app/xteam/issues"
   },
   "homepage": "https://github.com/xteam-app/xteam#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
   "workspaces": {
     "packages": [
       "apps/expo-app",
