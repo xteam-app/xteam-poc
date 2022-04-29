@@ -2,15 +2,14 @@
   "name": "xteam",
   "version": "0.0.1",
   "private": true,
-  "description": "xteam",
-  "main": "index.js",
+  "description": "XTeam app",
   "scripts": {
     "start": "echo \"Error: no start specified\" && exit 1",
     "start:mobile:ios": "yarn workspace @xteam-app/mobile ios",
     "start:ui": "yarn workspace @xteam-app/ui storybook",
     "start:ui:doc": "yarn workspace @xteam-app/ui storybook:docs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock"
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf package-lock.json"
   },
   "repository": {
     "type": "git",
@@ -26,15 +25,9 @@
   "devDependencies": {},
   "workspaces": {
     "packages": [
-      "apps/*",
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/react",
-      "**/react-dom",
-      "**/react-native",
-      "**/react-native/**",
-      "**/create-react-class"
+      "apps/expo-app",
+      "packages/core",
+      "packages/tsconfig"
     ]
   }
 }
