@@ -5,9 +5,10 @@
   "description": "XTeam app",
   "scripts": {
     "start": "npm -w @xteam-app/expo-app run start",
+    "start:web": "npm -w @xteam-app/expo-app run start -- --web --localhost",
     "start:ios": "npm -w @xteam-app/expo-app run ios -- --localhost",
     "storybook:web": "npm -w @xteam-app/core run storybook",
-    "storybook:ios": "npm -w @xteam-app/core run ios -- --ios --localhost",
+    "storybook:ios": "npm -w @xteam-app/core run ios -- --localhost",
     "storybook": "run-p storybook:*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf package-lock.json"
