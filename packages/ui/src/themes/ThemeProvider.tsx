@@ -1,4 +1,4 @@
-import React, { createContext, FC, useEffect, useLayoutEffect } from 'react';
+import React, { createContext, FC, useLayoutEffect } from 'react';
 import { useAppColorScheme, useDeviceContext } from 'twrnc';
 import { tw } from '../utils/tailwind';
 import { RnColorScheme } from 'twrnc/dist/esm/types';
