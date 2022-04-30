@@ -3,6 +3,7 @@
     "name": "core",
     "slug": "core",
     "version": "1.0.0",
+    "entryPoint": "./storybookEntryPoint.js",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
