@@ -8,7 +8,7 @@ interface MyButtonProps {
 export const MyButton = ({ onPress, text }: MyButtonProps) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>WEB</Text>
+      <Text style={styles.text}>NATIVE</Text>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
