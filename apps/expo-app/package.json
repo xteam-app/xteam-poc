@@ -1,14 +1,15 @@
 {
   "name": "@xteam-app/expo-app",
   "version": "0.0.1",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "expo start",
     "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "ios": "expo start --ios",
+    "start": "expo start",
+    "test": "jest --watchAll",
+    "web": "expo start --web"
   },
   "jest": {
     "preset": "jest-expo"
@@ -19,6 +20,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "@xteam-app/core": "*",
+    "@xteam-app/test-rn-lib": "*",
     "expo": "~44.0.0",
     "expo-asset": "~8.4.4",
     "expo-constants": "~13.0.0",
@@ -42,6 +44,5 @@
     "jest-expo": "~44.0.1",
     "react-test-renderer": "17.0.1",
     "typescript": "~4.3.5"
-  },
-  "private": true
+  }
 }

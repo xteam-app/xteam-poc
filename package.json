@@ -31,7 +31,11 @@
     "packages": [
       "apps/expo-app",
       "packages/core",
-      "packages/tsconfig"
+      "packages/tsconfig",
+      "packages/test-rn-lib"
     ]
+  },
+  "dependencies": {
+    "@xteam-app/test-rn-lib": "file:packages/test-rn-lib"
   }
 }

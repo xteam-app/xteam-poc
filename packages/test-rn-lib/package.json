@@ -1,0 +1,47 @@
+{
+  "name": "@xteam-app/test-rn-lib",
+  "version": "1.0.0",
+  "main": "lib/commonjs/index.js",
+  "devDependencies": {
+    "react-native-builder-bob": "^0.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "bob build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xteam-app/xteam.git"
+  },
+  "keywords": [],
+  "author": "Alex Iliushyk <ailushyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xteam-app/xteam/issues"
+  },
+  "homepage": "https://github.com/xteam-app/xteam#readme",
+  "description": "",
+  "react-native": "src/index.ts",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
+}
