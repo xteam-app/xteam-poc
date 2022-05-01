@@ -31,7 +31,8 @@
     "packages": [
       "apps/expo-app",
       "packages/core",
-      "packages/tsconfig"
+      "packages/tsconfig",
+      "packages/test-rn-lib"
     ]
   }
 }
