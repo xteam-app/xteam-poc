@@ -7,6 +7,7 @@
     "base.json",
     "node16.json",
     "nextjs.json",
+    "react-native.json",
     "react-library.json"
   ],
   "publishConfig": {

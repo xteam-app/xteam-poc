@@ -30,7 +30,7 @@ try {
 } catch {}
 
 const getStories = () => {
-  return [require("../src/components/Button/Button.stories.tsx")];
+  return [];
 };
 
 configure(getStories, module, false);

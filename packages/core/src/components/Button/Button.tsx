@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 
 interface MyButtonProps {
   onPress: () => void;
@@ -6,10 +7,14 @@ interface MyButtonProps {
 }
 
 export const MyButton = ({ onPress, text }: MyButtonProps) => {
+  console.log({Platform});
+  return null;
   return (
-    <button onClick={onPress}>
-      <span>WEB</span>
-      <span>{text}</span>
-    </button>
+    <>
+      <div>web</div>
+      <button onClick={onPress}>
+        <span>{text}</span>
+      </button>
+    </>
   );
 };
